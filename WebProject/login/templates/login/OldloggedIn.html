@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wep Programming Project</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form-elements.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+  </head>
+  <body style='background-image: url("{% static 'css/bg/1.jpg' %}")';>
+    {% include 'login/header.html' %}
+    <br>
+    <div class="container bg-light rounded">
+      <br>
+      <h1> Welcome {{ request.session.username }} </h1>
+        {% include "login/profile.html" with u=curuser img=curuser.image.url e=curuser.email g=curuser.gender d=curuser.dob h=curuser.hobby.all %}
+        <h2>Filter your results</h2>
+      <hr>
+      <div class="container">
+        <form role="form" method="POST" action="/filter/" class="filter-form">
+          {% csrf_token %}
+          <div class="form-group input-group col-sm-12">
+            <input type="number" name="minAge" value="" class="form-control" placeholder="Minimum Age...">
+            <input type="number" name="maxAge" value="" class="form-control" placeholder="Maximum Age...">
+          </div>
+          <div class="form-group col-sm-12">
+            <select name="gender" class="form-control">
+              <option value="Both">Both</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <button type="submit" value='Filter' class="btn" id="filter">Filter Results!</button>
+        </form>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div class="container bg-dark rounded" id="loadProfiles">
+      <br>
+      <h1 class="text-light">Recommended Users</h1>
+      <hr>
+      <p>{% for user in users %}
+        <div class="container bg-light rounded">
+          {% include "login/profile.html" with u=user img=user.image.url e=user.email g=user.gender d=user.dob h=user.hobby.all %}
+        </div>
+        <br>
+        {% endfor %}</p>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

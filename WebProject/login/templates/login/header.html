@@ -1,0 +1,15 @@
+{% block content %}
+<nav class="navbar navbar-light bg-dark">
+  {% if user.is_authenticated %}
+    <h1 class="col-10 text-light">Web Programming Group Project</h1>
+  {% else %}
+    <h1 class="col-12 text-light">Web Programming Group Project</h1>
+  {% endif %}
+<div class="upload-btn-wrapper col-2">
+  {% if user.is_authenticated %}
+        <button class="btn btn-info" onclick="window.location.href='/logout_view/'">Logout</button>
+        <br><span class="small">Logged in as  {{ user.username }} </span>
+  {% endif %}
+</div>
+</nav>
+{% endblock %}

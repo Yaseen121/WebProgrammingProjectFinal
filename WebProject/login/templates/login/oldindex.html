@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wep Programming Project</title>
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form-elements.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+</head>
+<body>
+  <h1> Testing 123 </h1>
+  <div class='main'>
+    <div id="registerDiv">
+      <h3>Please enter your details to sign up</h3>
+      <form method='POST' action="/register/">
+        {% csrf_token %}
+        <span class='fieldname'>Username</span>
+        <input type='text' maxlength='16' id='regusername' name='username'>
+        <span id='info'></span><br>
+        <span class='fieldname'>Password</span>
+        <input type='password' maxlength='16' name='password'><br><br>
+
+        <span class='fieldname'>Upload a profile image</span>
+        <input type="file" name="image" accept="image/*"><br><br>
+        <span class='fieldname'>eMail</span>
+        <input type='text' maxlength='16' name='email'><br><br>
+        <span class='fieldname'>Gender</span>
+        <select name="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select><br><br>
+        <span class='fieldname'>Date Of Birth</span>
+        <input type='date' maxlength='16' name='dob'><br><br>
+        <span class='fieldname'>Hobbies</span><br>
+        {% for hobby in hobbies %}
+        <input type="checkbox" name="hobby[]" value="{{hobby.id}}">{{hobby.name}}<br>
+        {% endfor %}
+        <input type='submit' value='Sign up'>
+      </form>
+    </div>
+  </div>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
