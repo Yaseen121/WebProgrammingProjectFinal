@@ -4,7 +4,11 @@ A matching site built with Django.
 
 STILL UPDATING
 ### Homepage
-![django-matching-web-app-gif](https://i.imgur.com/exGcc4z.gifv)
+
+[![django-matching-web-app](http://img.youtube.com/vi/AwrsrltusaA/0.jpg)](http://www.youtube.com/watch?v=AwrsrltusaA "Web Project Video")
+
+
+
 
 > On the homepage, the user is presented with the current weather conditions for their location. The user is also able to enter any time during the day along with a value for how long they would like to run, and the app would then present a forecast for that time period. 
 
