@@ -8,7 +8,7 @@ A matching site built with Django.
 >See YoutTube Video for demo. 
 
 1. Users	can	create	an	account	on	the	site	and	login.	
-2. The	user’s	proFile	consits of their	profile	image,	email,	gender,	date	of	birth,	
+2. The	user’s	profile	consits of their	profile	image,	email,	gender,	date	of	birth,	
 and	a	list	of	hobbies and the number of likes they have received. 
 3. Hobbies list can be edited through the databse (Users can only select existing hobbies).
 4. Users	will	then be presented with	a	list	of	other	users	who	have	the	most	similar	set	of	hobbies, sorted by those who have more similar hobbies to the user.
