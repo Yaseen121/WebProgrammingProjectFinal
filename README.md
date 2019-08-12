@@ -2,7 +2,7 @@
 
 A matching site built with Django.
 
-### Homepage
+### Video Demo and Features
 
 [![django-matching-web-app](http://img.youtube.com/vi/AwrsrltusaA/0.jpg)](http://www.youtube.com/watch?v=AwrsrltusaA "Web Project Video")
 >See YoutTube Video for demo. 
