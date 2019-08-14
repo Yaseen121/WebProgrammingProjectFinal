@@ -1,4 +1,4 @@
-# Web Programming Project Final - A Matching Django Web App
+# Web Programming Project Final - A Matching Django Web App (Winter 2018)
 
 A matching site built with Django.
 
